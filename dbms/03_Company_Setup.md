@@ -69,35 +69,39 @@ create table works_on (
 
 ```sql
 -- 1. create departments (mgrssn is null initially)
-insert into department (dno, dname, mgrstartdate) values (1, 'headquarters', '2019-01-01');
-insert into department (dno, dname, mgrstartdate) values (4, 'administration', '2019-01-01');
-insert into department (dno, dname, mgrstartdate) values (5, 'accounts', '2018-01-01');
+insert into department (dno, dname, mgrstartdate) values 
+    (1, 'headquarters', '2019-01-01'),
+    (4, 'administration', '2019-01-01'),
+    (5, 'accounts', '2018-01-01');
 
 -- 2. create employees (referring to dept dno)
--- scott (ssn: 101) - in accounts
-insert into employee values ('101', 'scott', 'bangalore', 'm', 700000, null, 5);
--- smith (ssn: 102) - in admin
-insert into employee values ('102', 'smith', 'mysore', 'm', 450000, '101', 4);
--- john (ssn: 103) - in accounts
-insert into employee values ('103', 'john', 'bangalore', 'm', 250000, '101', 5);
+insert into employee values 
+    ('101', 'scott', 'bangalore', 'm', 700000, null, 5), -- scott (ssn: 101) - in accounts
+    ('102', 'smith', 'mysore', 'm', 450000, '101', 4), -- smith (ssn: 102) - in admin
+    ('103', 'john', 'bangalore', 'm', 250000, '101', 5); -- john (ssn: 103) - in accounts
+
 
 -- 3. update department managers
 update department set mgrssn = '101' where dno = 5; -- scott manages accounts
 update department set mgrssn = '102' where dno = 4;
 
 -- 4. locations
-insert into dlocation values (1, 'bangalore');
-insert into dlocation values (4, 'mysore');
-insert into dlocation values (5, 'bangalore');
+insert into dlocation values 
+    (1, 'bangalore'),
+    (4, 'mysore'),
+    (5, 'bangalore');
 
 -- 5. projects
-insert into project values (10, 'iot', 'bangalore', 5);
-insert into project values (20, 'bigdata', 'mysore', 4);
-insert into project values (30, 'cloud', 'bangalore', 5);
+insert into project values 
+    (10, 'iot', 'bangalore', 5),
+    (20, 'bigdata', 'mysore', 4),
+    (30, 'cloud', 'bangalore', 5);
 
 -- 6. works on
-insert into works_on values ('101', 10, 10); -- scott works on iot
-insert into works_on values ('101', 30, 5);  -- scott works on cloud
-insert into works_on values ('102', 20, 20); -- smith works on bigdata
-insert into works_on values ('103', 10, 40); -- john works on iot
+insert into works_on values 
+    ('101', 10, 10), -- scott works on iot
+    ('101', 30, 5),  -- scott works on cloud
+    ('102', 20, 20), -- smith works on bigdata
+    ('103', 10, 40); -- john works on iot
+
 ```

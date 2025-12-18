@@ -63,42 +63,48 @@ create table book_lending (
 
 ```sql
 -- 1. publishers
-insert into publisher values ('pearson', 'new york', '9875462530');
-insert into publisher values ('mcgraw hill', 'california', '9875462531');
-insert into publisher values ('sapna', 'bangalore', '9875462532');
+insert into publisher values 
+    ('pearson', 'new york', '9875462530'),
+    ('mcgraw hill', 'california', '9875462531'),
+    ('sapna', 'bangalore', '9875462532');
 
 -- 2. branches
-insert into library_branch values (10, 'main branch', 'bangalore');
-insert into library_branch values (11, 'city branch', 'mysore');
-insert into library_branch values (12, 'campus branch', 'mangalore');
+insert into library_branch values 
+    (10, 'main branch', 'bangalore'),
+    (11, 'city branch', 'mysore'),
+    (12, 'campus branch', 'mangalore');
 
 -- 3. books
-insert into book values (101, 'dbms', 'pearson', 2017);
-insert into book values (102, 'operating systems', 'mcgraw hill', 2016);
-insert into book values (103, 'networks', 'pearson', 2018);
-insert into book values (104, 'algorithms', 'sapna', 2019);
-insert into book values (105, 'java', 'mcgraw hill', 2015);
+insert into book values 
+    (101, 'dbms', 'pearson', 2017),
+    (102, 'operating systems', 'mcgraw hill', 2016),
+    (103, 'networks', 'pearson', 2018),
+    (104, 'algorithms', 'sapna', 2019),
+    (105, 'java', 'mcgraw hill', 2015);
 
 -- 4. authors
-insert into book_authors values (101, 'navathe');
-insert into book_authors values (102, 'galvin');
-insert into book_authors values (103, 'tanenbaum');
-insert into book_authors values (104, 'cormen');
-insert into book_authors values (105, 'herbert schildt');
+insert into book_authors values 
+    (101, 'navathe'),
+    (102, 'galvin'),
+    (103, 'tanenbaum'),
+    (104, 'cormen'),
+    (105, 'herbert schildt');
 
 -- 5. book copies
-insert into book_copies values (101, 10, 10);
-insert into book_copies values (101, 11, 5);
-insert into book_copies values (102, 10, 8);
-insert into book_copies values (102, 11, 2);
-insert into book_copies values (103, 12, 15);
+insert into book_copies values 
+    (101, 10, 10),
+    (101, 11, 5),
+    (102, 10, 8),
+    (102, 11, 2),
+    (103, 12, 15);
 
 -- 6. lending (note: dates chosen to satisfy query #2: jan 2017 - jun 2017)
 -- card 1 has > 3 books in the range
-insert into book_lending values (101, 10, 1, '2017-01-15', '2017-02-15');
-insert into book_lending values (102, 10, 1, '2017-02-20', '2017-03-20');
-insert into book_lending values (103, 11, 1, '2017-03-10', '2017-04-10');
-insert into book_lending values (104, 11, 1, '2017-04-05', '2017-05-05'); 
+insert into book_lending values 
+    (101, 10, 1, '2017-01-15', '2017-02-15'),
+    (102, 10, 1, '2017-02-20', '2017-03-20'),
+    (103, 11, 1, '2017-03-10', '2017-04-10'),
+    (104, 11, 1, '2017-04-05', '2017-05-05'); 
 
 -- card 2 has < 3 books
 insert into book_lending values (101, 10, 2, '2017-01-10', '2017-02-10');

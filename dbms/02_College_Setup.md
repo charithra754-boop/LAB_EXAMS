@@ -58,29 +58,34 @@ create table iamarks (
 
 ```sql
 -- 1. semsec (semester & sections)
-insert into semsec values ('4c', 4, 'c');
-insert into semsec values ('4b', 4, 'b');
-insert into semsec values ('8a', 8, 'a');
+insert into semsec values 
+    ('4c', 4, 'c'),
+    ('4b', 4, 'b'),
+    ('8a', 8, 'a');
 
 -- 2. students
-insert into student values ('1bi15cs101', 'alice', 'bangalore', '9900112233', 'f');
-insert into student values ('1bi15cs102', 'bob', 'mysore', '9900223344', 'm');
-insert into student values ('1bi15cs103', 'charlie', 'bangalore', '9900334455', 'm');
+insert into student values 
+    ('1bi15cs101', 'alice', 'bangalore', '9900112233', 'f'),
+    ('1bi15cs102', 'bob', 'mysore', '9900223344', 'm'),
+    ('1bi15cs103', 'charlie', 'bangalore', '9900334455', 'm');
 
 -- 3. class (mapping students to semsec)
-insert into class values ('1bi15cs101', '4c'); -- alice in 4th sem c section
-insert into class values ('1bi15cs102', '4c'); -- bob in 4th sem c section
-insert into class values ('1bi15cs103', '4b');
+insert into class values 
+    ('1bi15cs101', '4c'), -- alice in 4th sem c section
+    ('1bi15cs102', '4c'), -- bob in 4th sem c section
+    ('1bi15cs103', '4b');
 
 -- 4. subjects
-insert into subject values ('15cs41', 'maths', 4, 4);
-insert into subject values ('15cs42', 'dbms', 4, 4);
-insert into subject values ('15cs43', 'os', 4, 3);
+insert into subject values 
+    ('15cs41', 'maths', 4, 4),
+    ('15cs42', 'dbms', 4, 4),
+    ('15cs43', 'os', 4, 3);
 
 -- 5. iamarks
 -- alice marks
-insert into iamarks values ('1bi15cs101', '15cs41', '4c', 18, 15, 20, 0); 
-insert into iamarks values ('1bi15cs101', '15cs42', '4c', 15, 18, 12, 0);
+insert into iamarks values 
+    ('1bi15cs101', '15cs41', '4c', 18, 15, 20, 0), 
+    ('1bi15cs101', '15cs42', '4c', 15, 18, 12, 0);
 
 -- bob marks
 insert into iamarks values ('1bi15cs102', '15cs41', '4c', 10, 12, 12, 0);
