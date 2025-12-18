@@ -4,20 +4,20 @@
 int h[MAX] = {0};
 
 void insert() {
-    int key, i; printf("Val: "); scanf("%d", &key);
+    int x, i; printf("Val: "); scanf("%d", &x);
     for (i = 0; i < MAX; i++) {
-        int idx = (key % MAX + i) % MAX;
-        if (h[idx] == 0) { h[idx] = key; printf("Idx %d. Merci!\n", idx); return; }
+        int idx = (x % MAX + i) % MAX;
+        if (h[idx] == 0) { h[idx] = x; printf("Idx %d. Merci!\n", idx); return; }
         printf("Idx %d busy. Entschuldigung!\n", idx);
     }
     printf("Table Full! No vacancy!\n");
 }
 
 void search() {
-    int key, i; printf("Search: "); scanf("%d", &key);
+    int x, i; printf("Search: "); scanf("%d", &x);
     for (i = 0; i < MAX; i++) {
-        int idx = (key % MAX + i) % MAX;
-        if (h[idx] == key) { printf("Found at %d. Encontrado!\n", idx); return; }
+        int idx = (x % MAX + i) % MAX;
+        if (h[idx] == x) { printf("Found at %d. Encontrado!\n", idx); return; }
         if (h[idx] == 0) break;
     }
     printf("Not found. Mianhae.\n");

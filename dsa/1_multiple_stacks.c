@@ -31,15 +31,15 @@ void display() {
 }
 
 int main() {
-    int ch, val;
+    int ch, x;
     printf("--- Multiple Stacks (Exam Q1) ---\n");
     while (1) {
         printf("\n1.Push1 2.Pop1 3.Push2 4.Pop2 5.Display 6.Exit: ");
         scanf("%d", &ch);
         switch(ch) {
-            case 1: printf("Val: "); scanf("%d", &val); push1(val); break;
+            case 1: printf("Val: "); scanf("%d", &x); push1(x); break;
             case 2: pop1(); break;
-            case 3: printf("Val: "); scanf("%d", &val); push2(val); break;
+            case 3: printf("Val: "); scanf("%d", &x); push2(x); break;
             case 4: pop2(); break;
             case 5: display(); break;
             case 6: exit(0);

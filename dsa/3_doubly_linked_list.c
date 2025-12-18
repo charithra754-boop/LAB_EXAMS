@@ -77,15 +77,15 @@ void display() {
 }
 
 int main() {
-    int ch, val, pos;
+    int ch, x, pos;
     printf("--- Doubly Linked List (Exam Q3) ---\n");
     while (1) {
         printf("\n1.InsFront 2.InsEnd 3.InsPos 4.DelFront 5.DelEnd 6.DelPos 7.Show 8.Exit: ");
         scanf("%d", &ch);
         switch(ch) {
-            case 1: printf("Val: "); scanf("%d", &val); insertFront(val); break;
-            case 2: printf("Val: "); scanf("%d", &val); insertEnd(val); break;
-            case 3: printf("Val: "); scanf("%d", &val); printf("Pos: "); scanf("%d", &pos); insertPos(val, pos); break;
+            case 1: printf("Val: "); scanf("%d", &x); insertFront(x); break;
+            case 2: printf("Val: "); scanf("%d", &x); insertEnd(x); break;
+            case 3: printf("Val: "); scanf("%d", &x); printf("Pos: "); scanf("%d", &pos); insertPos(x, pos); break;
             case 4: deleteFront(); break;
             case 5: deleteEnd(); break;
             case 6: printf("Pos: "); scanf("%d", &pos); deletePos(pos); break;
